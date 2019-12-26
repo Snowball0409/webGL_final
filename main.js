@@ -48,6 +48,21 @@ function handleMouseMove(event) {
 }
 
 // event handlers for button clicks
+<<<<<<< HEAD
+=======
+function rotateX() {
+	paused = 0;
+    axis = xAxis;
+};
+function rotateY() {
+	paused = 0;
+	axis = yAxis;
+};
+function rotateZ() {
+	paused = 0;
+	axis = zAxis;
+};
+>>>>>>> 0fdb69a43f51e7a1bf0523ececa45c75936135dc
 
 function startMusic() {
 	if (musicStarted) return;
@@ -290,6 +305,15 @@ window.onload = function init()
        flatten(materialSpecular) );	       
     gl.uniform1f( gl.getUniformLocation(program, "shininess"), materialShininess);
 
+<<<<<<< HEAD
+=======
+    //event listeners for buttons 
+    document.getElementById( "xButton" ).onclick = rotateX;
+    document.getElementById( "yButton" ).onclick = rotateY;
+    document.getElementById( "zButton" ).onclick = rotateZ;
+    document.getElementById( "pButton" ).onclick = function() {paused=!paused;};
+    document.getElementById( "dButton" ).onclick = startMusic;
+>>>>>>> 0fdb69a43f51e7a1bf0523ececa45c75936135dc
 	
 	// event handlers for mouse input (borrowed from "Learning WebGL" lesson 11)
 	canvas.onmousedown = handleMouseDown;

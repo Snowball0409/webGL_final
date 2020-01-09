@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>Audio Visualizer</title>
+		<div class="webTitle">
+			<span>WebGL Audio Visualizer</span>
+		</div>
+
+		<script type="text/javascript">
+			var getSourceSynch = function(url){
+				var req = new XMLHttpRequest();
+				req.open("GET" , url , false);
+				req.send(null);
+				return req.responseText
+			}
+		</script>
+
+		<link rel="stylesheet" type="text/css" href="Style/style.css">
+		<script id="no-transform-vertex-shader" type="x-shader/x-vertex"></script>
+		<script id="bg-vertex-shader" type="x-shader/x-vertex"></script>
+		<script id="bloom-fragment-shader" type="x-shader/x-fragment"></script>
+		<script id="circle-fragment-shader" type="x-shader/s-fragment"></script>
+		<script id="pure-tex-fragment-shader" type="x-shader/x-fragment"></script>
+		<script id="dark-tex-fragment-shader" type="x-shader/x-fragment"></script>
+
+		<script type="text/javascript" src="Common/webgl-utils.js"></script>
+		<script type="text/javascript" src="Common/initShaders.js"></script>
+		<script type="text/javascript" src="Common/MV.js"></script>
+		<script type="text/javascript" src="Common/bogay-utils.js"></script>
+		<script type="text/javascript" src="Common/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/effect.js"></script>
+		<script type="text/javascript" src="js/ring2.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<!--script type="text/javascript" src="Common/dragControl.js"></!--script-->
+		
+	</head>
+	<body>
+
+		<table class="controller">
+			<tr class="canvaPlace">
+				<td>
+					<canvas id="gl-canvas">
+						Oops ... your browser doesn't support the HTML5 canvas element
+					</canvas>
+				</td>
+				<td id="dropBoxTable">
+					<div id="playblock">
+						<div id="player">
+							<div id="ctrl">
+								<div class="tag">
+									<strong class="title">--Title--</strong>
+								</div>
+								<div class="info">
+									<li class="artist">Artist</li>
+									<li class="album">Album</li>
+								</div>
+								<div id="container"></div>
+							</div>
+						</div>
+						<div id="dropbox">
+							<div id="dropctrl">
+								<label class="droplabel">
+									<span id="droplabel">Drop mp3 file here...</span>
+									<input id="musicFile" style="display: none" type="file" accept="audio/*">									
+								</label>
+
+							</div>
+							<div id="list">
+								<span id="_PlaylistTitle">Play list:</span>
+								<ul id="playlist"></ul>
+							</div>
+							
+						</div>
+					</div>
+				</td>	
+			</tr>
+		</table>
+		<button id="ChangeColor">Rainbow~</button>
+	</body>
+	<footer>
+		<span> @ Made by 40747021S </span>
+	</footer>
+</html>
